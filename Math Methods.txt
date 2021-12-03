@@ -1,0 +1,85 @@
+
+import java.util.Scanner;
+import java.util.Random;
+
+public class Main
+{
+  public static void addTwoNumbers()
+  {
+    Scanner answer = new Scanner(System.in);
+    Random rnd = new Random();
+    int num1 = rnd.nextInt(20) + 1;
+    int num2 = rnd.nextInt(20) + 1;
+    int total = num1 + num2;
+    System.out.print(num1 + " + " + num2 + " =");
+    int number = answer.nextInt();
+    if(number != total)
+    {
+      System.out.println("Wrong! The correct answer is " + total);
+    }
+    else
+    {
+      System.out.println("Correct!");
+    }
+  }
+  public static void diffTwoNumbers()
+  {
+    Scanner answer = new Scanner(System.in);
+    Random rnd = new Random();
+    int num1 = rnd.nextInt(20) + 1;
+    int num2 = rnd.nextInt(20) + 1;
+    int total = Math.max(num1,num2) - Math.min(num1,num2);
+    System.out.print(Math.max(num1,num2) + " - " + Math.min(num1,num2) + " =");
+    int number = answer.nextInt(); 
+    if(number != total)
+    {
+      System.out.println("Wrong! The correct answer is " + total);
+    }
+    else
+    {
+      System.out.println("Correct!");
+    }
+  }
+  public static void prodTwoNumbers()
+  {
+    Scanner answer = new Scanner(System.in);
+    Random rnd = new Random();
+    int num1 = rnd.nextInt(20) + 1;
+    int num2 = rnd.nextInt(20) + 1;
+    int total = num1 * num2;
+    System.out.print(num1 + " * " + num2 + " =");
+    int number = answer.nextInt(); 
+    
+    if(number != total)
+    {
+      System.out.println("Wrong! The correct answer is " + total);
+    }
+    else
+    {
+      System.out.println("Correct!");
+    }
+  }
+  public static void main (String[] args)
+	{
+	  Scanner letter = new Scanner(System.in);
+	  
+	  
+	  System.out.println("What do you want to practice?");
+	  System.out.println("(A)ddition, (S)ubtraction or (M)ultiplication.");
+	  String choice = letter.nextLine();
+	  
+	 switch(choice) {
+  case "M":
+    prodTwoNumbers();
+    break;
+  case "A":
+    addTwoNumbers();
+    break;
+  case "S":
+    diffTwoNumbers();
+    break;
+  default:
+    System.out.println("Please choose between M, A, or S.");
+}
+	}
+}
